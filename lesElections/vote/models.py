@@ -37,6 +37,7 @@ class Votants(models.Model):
     voteVotant = models.BooleanField(default=False)
     chevelure = models.ForeignKey(Chevelure, on_delete=models.CASCADE)
     roles = models.ForeignKey(Roles, on_delete=models.CASCADE)
+    idees =  models.ManyToManyField(Idees, through='Voter')
 
     def __str__(self):
         return self.nomVotant, self.prenomVotant
